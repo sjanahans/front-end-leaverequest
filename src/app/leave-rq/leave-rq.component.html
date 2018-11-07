@@ -1,0 +1,55 @@
+<div class="container col-md-10 offset-1">
+  <div class="row">
+    <div class="form-group col-md-4">
+      <label for="usr">Employee ID:</label>
+      <input type="text" class="form-control " id="usr">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="usr">Employee Name:</label>
+      <input type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="usr">Reason:</label>
+      <input type="text" class="form-control" id="usr">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="sel1">Leave Type:</label>
+      <select class="form-control" id="sel1">
+        <option *ngFor="let leavetype of leaveTypeList">{{leavetype.leaveType}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sel1">Status:</label>
+      <select class="form-control" id="sel1">
+        <option *ngFor="let leavestatus of leaveStatusList">{{leavestatus.statusName}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-success align=left"  data-toggle="modal" data-dismiss="modal">Success</button>
+    </div>
+  </div>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Employee Name</th>
+          <th>Reson</th>
+          <th>Status</th>
+          <th>Leave Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leaverq of leaverqList">
+          <td>{{leaverq.id}}</td>
+          <td>{{leaverq.employeeName}}</td>
+          <td>{{leaverq.reason}}</td>
+          <td>{{leaverq.status.statusName}}</td>
+          <td>{{leaverq.leaveType.leaveType}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
